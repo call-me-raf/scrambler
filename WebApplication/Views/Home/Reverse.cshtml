@@ -1,0 +1,35 @@
+﻿@model IEnumerable<WebApplication.Models.Word>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ваше сообщение зашифровано!</h2>
+<div class="maincl">
+    <h2>Результат: </h2>
+    <h2>@ViewBag.NewWord</h2>
+</div>
+<style>
+    h2, h3, th {
+        text-align: center;
+    }
+</style>
+
+<table>
+    <tr>
+        <th>WordId</th>
+        <th>OldWord</th>
+        <th>NewWord</th>
+        <th>Date</th>
+    </tr>
+    @foreach (var w in ViewBag.WordsList)
+    {
+        <tr>
+            <td>@w.Id</td>
+            <td>@w.OldWord</td>
+            <td>@w.NewWord</td>
+            <td>@w.dateTime</td>
+        </tr>
+    }
+</table>
+

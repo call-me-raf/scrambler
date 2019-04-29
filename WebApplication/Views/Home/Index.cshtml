@@ -1,0 +1,34 @@
+﻿@model IEnumerable<WebApplication.Models.Word>
+
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Главная страница</title>
+</head>
+<body>
+    <div>
+        <h2>Шифрование сообщений</h2>
+        <style>            h2 {
+                text-align:left;
+            }
+        </style>
+        @using (Html.BeginForm("Reverse", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <form>
+                <p>Введите сообщение</p>
+                <input type="text" name="Word" />
+                <button>Зашифровать</button>
+            </form>
+        }
+        
+    </div>
+</body>
+</html>
